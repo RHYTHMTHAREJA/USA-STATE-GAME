@@ -14,7 +14,7 @@ data = pandas.read_csv("50_states.csv")
 all_states = data["state"].tolist()
 guessed_states = []
 
-while len(guessed_states) < 50 :
+while len(guessed_states) < 50:
     answer_state = screen.textinput(title=f"{len(guessed_states)}/50 states correct",
                                     prompt="What's the another state's name?").title()
 
@@ -34,7 +34,5 @@ while len(guessed_states) < 50 :
         state_data = (data[data["state"] == answer_state])
         t.goto(state_data.x.item(), state_data.y.item())
         t.write(answer_state)
-
-
 
 screen.exitonclick()
